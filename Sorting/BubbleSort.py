@@ -9,5 +9,6 @@ for i in range(length):
             temp = arr[j]
             arr[j] = arr[j+1]
             arr[j+1] = temp
+
 print("The Sorted numbers are:")
 print(arr)
