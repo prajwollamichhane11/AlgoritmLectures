@@ -1,5 +1,8 @@
+import time
+
 A = list(map(int,input().split()))
 
+start = time.time()
 for j in range (2,len(A)):
     key = A[j]
     i = j-1
@@ -7,5 +10,8 @@ for j in range (2,len(A)):
         A[i+1] = A[i]
         i = i-1
     A[i+1] = key
+end = time.time()
+
 print(A)
- 
+
+print("The running time is ",end - start)
