@@ -8,10 +8,10 @@ def BinarySearch(arr,n):
     last = len(arr)-1
     found = 0
 
-    while first<=last:
+    while first<=last and found == -1:
         midpoint = (first + last)//2
         if arr[midpoint] == n:
-            found = 1
+            found = midpoint
             break
         else:
             if n < arr[midpoint]:
@@ -19,7 +19,7 @@ def BinarySearch(arr,n):
             else:
                 first = midpoint+1
 
-    if found == 1:
+    if found != -1:
         print("Yes")
     else:
         print("No")
@@ -28,10 +28,3 @@ def BinarySearch(arr,n):
 #arr = sorted(arr)
 #n = int(input("Enter the no. you want to search: "))
 #BinarySearch(arr,n)
-
-if __name__ == '__main__':
-    arr = [0,1,2,3,4,5]
-    arr = list(map(int,input().split()))
-    arr = sorted(arr)
-    n = int(input("Enter the no. you want to search: "))
-    BinarySearch(arr,n)
