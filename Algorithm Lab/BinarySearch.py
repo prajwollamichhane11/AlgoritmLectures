@@ -25,10 +25,13 @@ def BinarySearch(arr,n):
         print("No")
 
 #arr = list(map(int,input().split()))
-
 #arr = sorted(arr)
 #n = int(input("Enter the no. you want to search: "))
 #BinarySearch(arr,n)
 
 if __name__ == '__main__':
     arr = [0,1,2,3,4,5]
+    arr = list(map(int,input().split()))
+    arr = sorted(arr)
+    n = int(input("Enter the no. you want to search: "))
+    BinarySearch(arr,n)

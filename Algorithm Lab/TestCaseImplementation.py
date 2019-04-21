@@ -16,14 +16,10 @@ class SearchTestcase(unittest.TestCase):
         self.assertEqual(BinarySearch(A, 0), 0)
         self.assertEqual(BinarySearch(A, 1), 1)
         self.assertEqual(BinarySearch(A, 2), 2)
-        self.assertEqual(BinarySearch(A, 3), 3)
-        self.assertEqual(BinarySearch(A, 4), 4)
-        self.assertEqual(BinarySearch(A, 5), 5)
-
 
         #Tests for element which are not on the list
-        #self.assertEqual(test_BinarySearch(A, 10), -1)
-        #self.assertEqual(test_BinarySearch(A, 11), -1)
+        self.assertEqual(BinarySearch(A, 10), -1)
+        self.assertEqual(BinarySearch(A, 11), -1)
 
 
     def test_LinearSearch(self):
@@ -41,8 +37,8 @@ class SearchTestcase(unittest.TestCase):
 
 
         #Tests for element that are not on the list
-        #self.assertEqual(linear_search(A, 10), -1)
-        #self.assertEqual(linear_search(A, 11), -1)
+        self.assertEqual(LinearSearch(A, 10), -1)
+        self.assertEqual(LinearSearch(A, 11), -1)
 
 if __name__ == "__main__":
     unittest.main()
