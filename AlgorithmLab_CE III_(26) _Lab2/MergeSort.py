@@ -1,48 +1,47 @@
-# Python program for implementation of MergeSort
-def mergeSort(arr):
-        if len(arr) >1:
-	        mid = len(arr)//2
-            L = arr[:mid]
-            R = arr[mid:]
+#function for merging two sub-arrays into a new array arr
+def merge(left, right, arr):
+  i = 0
+  j = 0
+  k = 0
 
-            mergeSort(L)
-		    mergeSort(R)
+  while (i<len(left) and j<len(right)):
+    if(left[i]<right[j]):
+      arr[k] = left[i]
+      i = i+1
+    else:
+      arr[k] = right[j]
+      j = j+1
 
+    k = k+1
 
-                i = j = k = 0
+  while(i<len(left)):
+    arr[k] = left[i]
+    i = i+1
+    k = k+1
 
-		# Copy data to temp arrays L[] and R[]
-		while i < len(L) and j < len(R):
-			if L[i] < R[j]:
-				arr[k] = L[i]
-				i+=1
-			else:
-				arr[k] = R[j]
-				j+=1
-			k+=1
+  while(j<len(right)):
+    arr[k] = right[j]
+    j = j+1
+    k = k+1
 
-		# Checking if any element was left
-		while i < len(L):
-			arr[k] = L[i]
-			i+=1
-			k+=1
+#Dividing the Array
+def mergesort(arr):
+  n = len(arr)
+  if(n<2):
+    return
 
-		while j < len(R):
-		        arr[k] = R[j]
-			j+=1
-			k+=1
+  mid = n//2
+  left = []
+  right = []
 
-# Code to print the list
-def printList(arr):
-	for i in range(len(arr)):
-		print(arr[i],end=" ")
-	print()
+  left  = arr[ :mid]
+  right = arr[mid: ]
 
-# driver code to test the above code
-if __name__ == '__main__':
-	arr = [12, 11, 13, 5, 6, 7]
-	print ("Given array is", end="\n")
-	printList(arr)
-	mergeSort(arr)
-	print("Sorted array is: ", end="\n")
-	printList(arr)
+  mergesort(left)
+  mergesort(right)
+
+  merge(left,right,arr)
+  return arr
+
+#arr = list(map(int,input().split()))
+#print(mergesort(arr))
