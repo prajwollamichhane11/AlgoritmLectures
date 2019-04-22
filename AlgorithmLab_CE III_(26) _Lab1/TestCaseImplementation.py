@@ -10,7 +10,6 @@ class SearchTestcase(unittest.TestCase):
     def test_BinarySearch(self):
 
         A = [0,1,2,3,4,5]
-        A = list(range(6))
 
         #Tests for element which are on the list
         self.assertEqual(BinarySearch(A, 0), 0)
@@ -25,15 +24,14 @@ class SearchTestcase(unittest.TestCase):
     def test_LinearSearch(self):
 
         A = [0,1,2,3,4,5]
-        A = list(range(6))
 
         #Tests for element which are on the list
-        self.assertEqual(LinearSearch(A, 0), 0)
+        self.assertEqual(LinearSearch(A, 0), 1)
         self.assertEqual(LinearSearch(A, 1), 1)
-        self.assertEqual(LinearSearch(A, 2), 2)
-        self.assertEqual(LinearSearch(A, 3), 3)
-        self.assertEqual(LinearSearch(A, 4), 4)
-        self.assertEqual(LinearSearch(A, 5), 5)
+        self.assertEqual(LinearSearch(A, 2), 1)
+        self.assertEqual(LinearSearch(A, 3), 1)
+        self.assertEqual(LinearSearch(A, 4), 1)
+        self.assertEqual(LinearSearch(A, 5), 1)
 
 
         #Tests for element that are not on the list

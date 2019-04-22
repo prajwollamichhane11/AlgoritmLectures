@@ -4,14 +4,14 @@ import random
 from time import time
 import matplotlib.pyplot as plt
 
-n = 1000
+n = 100
 i = 0
 timeLinear = []
 timeBinary = []
 sizeArray = []
 
 #Time calculations linear search
-for i in range(n, n * 11, n):
+for i in range(n, n * 10, n):
 	sizeArray.append(i)
 	randomvalues = random.sample(range(i), i)
 	startTime = time()
@@ -21,11 +21,11 @@ for i in range(n, n * 11, n):
 	timeLinear.append(totalTime)
 	print(totalTime, "for size", i)
 
-n = 1000
+n = 100000
 i = 0
 
 #Time Plotting for the binary search
-for i in range(n, n * 11, n):
+for i in range(n, n * 10, n):
 	randomvalues = random.sample(range(i),i)
 	startTime = time()
 	BinarySearch(randomvalues, randomvalues[i-1])
