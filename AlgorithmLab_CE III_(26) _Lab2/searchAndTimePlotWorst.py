@@ -27,8 +27,8 @@ def plotfunction():
         end_time = time.time()
         y2.append(end_time - start_time)
 
-    plt.plot(x, y1,label='Insertion')
-    plt.plot(x, y2,label='Merge')
+    plt.plot(x, y1,label="Insertion")
+    plt.plot(x, y2,label="Merge")
     plt.title("Worst Case Insertion vs Merge")
     plt.xlabel("Size(N)", color = "blue")
     plt.ylabel("Execution Time", color = "blue")
