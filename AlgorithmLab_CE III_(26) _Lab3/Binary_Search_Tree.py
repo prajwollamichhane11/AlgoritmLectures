@@ -47,3 +47,25 @@ class Binary_Search_Tree:
             self._inorder_walk(subtree.left,nodes)
             nodes.append(subtree.key)
             self._inorder_walk(subtree.right,nodes)
+
+    def preorder_walk(self):
+        nodes = []
+        self._preorderwalk(self._root,nodes)
+        return nodes
+
+    def _preorderwalk(self,subtree,nodes):
+        if subtree:
+            nodes.append(subtree.key)
+            self._preorderwalk(subtree.left,nodes)
+            self._preorderwalk(subtree.right,nodes)
+
+    def postorder_walk(self):
+        nodes = []
+        self._postorderwalk(self._root,nodes)
+        return nodes
+
+    def _postorderwalk(self,subtree,nodes):
+        if subtree:
+            self._postorderwalk(subtree.left,nodes)
+            self._postorderwalk(subtree.right,nodes)
+            nodes.append(subtree.key)

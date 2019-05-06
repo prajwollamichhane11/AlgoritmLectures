@@ -14,13 +14,16 @@ class BinarySearchTestcase(unittest.TestCase):
             bst.add_node(15,"Cat")
             self.assertEqual(bst.size(),3)
 
-            bst.add_node(13,"Dog")
+            bst.add_node(30,"Dog")
             self.assertEqual(bst.size(),4)
 
+            self.assertListEqual(bst.inorder_walk(),[10,15,20,30])
 
-            self.assertListEqual(bst.inorder_walk(),[10,11,12,13])
+            self.assertListEqual(bst.preorder_walk(),[10,20,15,30])
 
-            self.assertListEqual(bst.inorder_walk(),[10,13,15,20])
+            self.assertListEqual(bst.postorder_walk(),[15,30,20,10])
+
+
 
 if __name__ == "__main__":
     unittest.main()
