@@ -69,3 +69,13 @@ class Binary_Search_Tree:
             self._postorderwalk(subtree.left,nodes)
             self._postorderwalk(subtree.right,nodes)
             nodes.append(subtree.key)
+
+
+    def minimumValue(key):
+        current = key
+
+        # loop down to find the leftmost leaf
+        while(current.left is not None):
+            current = current.left
+
+        return current  
